@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="author" content="">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>Angerona</title>
+<meta name="Googlebot" content="index, follow">
+<meta name="revisit-after" content="3">
+<meta name="Robots" content="INDEX, FOLLOW">
+    
+<meta property="og:site_name" content="">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:description" content="">
+<meta property="og:image" content="images/logo.png">
+<meta property="og:title" content="">
+<meta property="og:url" content="">
+
+<link rel="alternate" hreflang="en-GB" href="" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/framework.css" rel="stylesheet" type="text/css" />
+<link href="css/animate.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="images/fav.png" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link type="text/css" rel="stylesheet" href="css/jquery.selectBoxIt.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script src="http://gregfranko.com/jquery.selectBoxIt.js/js/jquery.selectBoxIt.min.js"></script>  
+
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.12/src/infobox.js"></script>
+<script>
+
+var ib = new InfoBox();
+
+function initialize() {
+
+var mapOptions = {
+  zoom: 15,
+  center: new google.maps.LatLng(44.620747, 21.185256),
+  mapTypeId: google.maps.MapTypeId.ROADMAP,
+//  styles: styles,
+  scrollwheel: false
+};
+var map = new google.maps.Map(document.getElementById('inner-map'),mapOptions);
+
+    google.maps.event.addListener(map, "click", function() { ib.close() });
+
+setMarkers(map, sites);
+            infowindow = new google.maps.InfoWindow({
+    content: "loading..."
+
+});
+}
+
+var sites = [
+	['Stari Korzo', 44.621297, 21.187177, 1, '<p>Led Bilbord na uglu Ulica kralja Petra I i Nušućeve <br /> <img src="images/map-image.jpg" /><br/> <a href="led-full.html" class="view">Detaljnije</a></p>', 'images/marker1.png', 'Pozarevac'],
+	['Lole Ribara 14', 44.619724, 21.180074, 2, '<p>Led Bilbord na uglu Ulica kralja Petra I i Nušućeve <br /> <img src="images/map-image.jpg" /><br/> <a href="led-full.html" class="view">Detaljnije</a></p>', 'images/marker1.png', 'Pozarevac'],
+	['Drinska', 44.620747, 21.185256, 3, '<p>Led Bilbord na uglu Ulica kralja Petra I i Nušućeve <br /> <img src="images/map-image.jpg" /><br/> <a href="led-full.html" class="view">Detaljnije</a></p>', 'images/marker1.png', 'Pozarevac'],
+	['Smederevo', 44.645028, 20.941771, 4, '<p>Led Bilbord na uglu Ulica kralja Petra I i Nušućeve <br /> <img src="images/map-image.jpg" /><br/> <a href="led-full.html" class="view">Detaljnije</a></p>', 'images/marker3.png', 'Pozarevac'],
+	['Zrenjanin', 45.383174, 20.373886, 5, '<p>Led Bilbord na uglu Ulica kralja Petra I i Nušućeve <br /> <img src="images/map-image.jpg" /><br/> <a href="led-full.html" class="view">Detaljnije</a></p>', 'images/marker1.png', 'Pozarevac'],
+	['Jagodina', 43.977781, 21.260862, 7, '<p>Led Bilbord na uglu Ulica kralja Petra I i Nušućeve <br /> <img src="images/map-image.jpg" /><br/> <a href="led-full.html" class="view">Detaljnije</a></p>', 'images/marker1.png', 'Petrovac'],
+	['Niš', 43.313233, 21.896822, 8, '<p>Led Bilbord na uglu Ulica kralja Petra I i Nušućeve <br /> <img src="images/map-image.jpg" /><br/> <a href="led-full.html" class="view">Detaljnije</a></p>', 'images/marker1.png', 'Kucevo']
+];
+
+/* var sites = [
+    // List all locations for each pin
+['The Frontroom', 52.202977,0.138938, 1, '<p>The Frontroom. <br/>23-25 Gwydir Street, Cambridge, CB1 2LG <br/>01223 305 600</p>']
+];
+*/
+
+function createMarker(site, map){
+    var siteLatLng = new google.maps.LatLng(site[1], site[2]);
+    var marker = new google.maps.Marker({
+        position: siteLatLng,
+        map: map,
+        title: site[0],
+        zIndex: site[3],
+        html: site[4],
+        icon: site[5],
+        category: site[6]
+    });
+
+    // Begin example code to get custom infobox
+    var boxText = document.createElement("div");
+    boxText.id = 'infooo';
+    boxText.innerHTML = marker.html;
+
+    var myOptions = {
+	 content: boxText,
+	 disableAutoPan: false,
+	 maxWidth: 0,
+	 pixelOffset: new google.maps.Size(-147, -310),
+	 zIndex: null,
+	 boxStyle: { 
+		background: "url('images/map-arrow.png') no-repeat center bottom"
+	 },
+	 closeBoxMargin: "-6px -8px 2px 2px",
+	 closeBoxURL: "images/map-close.png",
+	 infoBoxClearance: new google.maps.Size(1, 1),
+	 isHidden: false,
+	 pane: "floatPane",
+	 enableEventPropagation: false
+    };
+    // end example code for custom infobox
+
+    google.maps.event.addListener(marker, "click", function (e) {
+     ib.close();
+     ib.setOptions(myOptions);
+     ib.open(map, this);
+    });
+    return marker;
+}
+
+
+function setMarkers(map, markers) {
+
+ for (var i = 0; i < markers.length; i++) {
+   createMarker(markers[i], map);
+ }
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<script>
+$(document).ready(function(e) {
+    $('.current-select').click(function(){
+		if ($('#select-items').is(':visible')){
+			$('#select-items').fadeOut();
+		}else{
+			$('#select-items').fadeIn();
+		}
+	});
+    $('#select-items a').click(function(){
+		$('#select-items').fadeOut();
+	    $('.current-select').text($(this).text());		
+	});
+});
+</script>
+</head>
+<body style="overflow:hidden;">
+
+<div id="header-container">
+<div id="header">
+	<div id="logo" data-0="height: 123px; width: 163px;padding: 10px;" data-200="height: 53px; padding: 5px; width: 73px;">
+    	<a href="index.html"><img src="images/logo.png" alt="angerona - logo" class="transition" style="width: 100%; max-width: 100%"></a>
+    </div>
+    <div id="menu" data-0="width: 817px;" data-200="width: 907px;">
+		<div id="menu-holder">
+            <a href="index.html" title="Naslovna">Naslovna</a>
+            <a href="index.html" title="O nama">O nama</a>
+            <a href="index.html" title="Led bilbordi">Led bilbordi</a>
+            <a href="index.html" title="Standardni bilbordi">Standardni bilbordi</a>
+            <a href="index.html" title="Reference">Reference</a>
+            <a href="kreativni_kutak.html" title="Kreativni kutak">Kreativni kutak</a>
+            <a href="index.html" title="Kontakt">Kontakt</a>
+            <a href="index.html" title="Cenovnik">Cenovnik</a>
+	    </div>
+    </div>
+</div>
+</div>
+<div id="inner-map"></div>
+
+<div id="map-footer">
+	<div id="map-footer-content">
+    	<div class="footer-title">Ponuda Led Bilborda</div>
+    	<div class="footer-select">
+        	Odaberite na mapi mesto za oglašavanje
+            <div id="select-box">
+            	<span class="current-select">Požarevac</span>
+                <div id="select-items">
+                    <a href="#">Požarevac</a>
+                    <a href="#">Smederevo</a>
+                    <a href="#">Petrovac</a>
+                    <a href="#">Kucevo</a>
+            	</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/skrollr.min.js"></script>
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/skrollr.ie.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+var s = skrollr.init({
+	edgeStrategy: 'set',
+	easing: {
+		WTF: Math.random,
+		inverted: function(p) {
+			return 1-p;
+		}
+	}
+});
+</script>
+
+<script src="js/owl.carousel.js"></script>
+<style>
+#owl-demo .item img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+</style>
+
+
+<script>
+$(document).ready(function() {
+	$("#owl-demo").owlCarousel({
+		navigation : true,
+		pagination: false,
+		slideSpeed : 300,
+		paginationSpeed : 400,
+		singleItem : true
+	});
+	$("#owl-ref").owlCarousel({
+		navigation : false,
+		pagination: false,
+		autoPlay: true
+	});
+});
+</script>
+<script>
+	jQuery(function($) {
+		$('select').selectBoxIt({ });
+	});
+</script>
+
+</body>
+</html>	

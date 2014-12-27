@@ -1,0 +1,266 @@
+#main-border {
+    border: 15px solid #cccccc;
+    border-radius: 50%;
+	display: none;
+    height: 450px;
+    left: 50%;
+    margin: -225px 0 0 -225px;
+    position: absolute;
+    top: 50%;
+    width: 450px;
+}
+#clock-text {
+    border-radius: 50%;
+    color: #666;
+    height: 450px;
+    left: 50%;
+    margin: 0 0 0 -160px;
+    position: absolute;
+    top: 50%;
+    width: 320px;
+	font-style: italic !important;
+}
+#sub-border {
+    border: 2px solid #E03494;
+    border-radius: 50%;
+    height: 463px;
+    left: 50%;
+    margin: -219px 0 0 -219px;
+    position: absolute;
+    top: 50%;
+    width: 463px;
+}
+#circle, #circle2, #circle3, #circle4, #circle5, #circle6 {
+    color: #fff;
+    font: 13px/130px arial;
+	text-transform:uppercase;
+    text-align: center;
+    background: none repeat scroll 0 0 #3D1C51;
+    border-radius: 50%;
+    height: 130px;
+    position: absolute;
+    top: 50%;
+	transform: scale(0.5);
+	-webkit-transform: scale(0.5);
+	-moz-transform: scale(0.5);
+	-o-transform: scale(0.5);
+	-ms-transform: scale(0.5);
+    width: 130px;
+    left: 50%;
+	box-shadow: 0 0 0px 6px #fff, 0 0 0px 9px #E03494;
+	transition: all 0.25s ease-in-out;
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+}
+#circle:hover, #circle2:hover, #circle3:hover, #circle4:hover, #circle5:hover, #circle6:hover{
+	transform: scale(1);
+}
+#circle-kruzna {
+    background: url("../images/strelica.png") repeat scroll 0 0 transparent;
+    border-radius: 50%;
+    height: 30px;
+    left: 50%;
+    margin-left: -233px;
+    margin-top: 0;
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    -webkit-animation: kruzna 12s linear;
+    animation: kruzna 12s linear;-webkit-animation-delay: 2s;
+	-moz-animation-delay: 2s;
+	-ms-animation-delay: 2s;
+	animation-delay: 2s;
+}
+@-webkit-keyframes kruzna {
+    0%   {-webkit-transform: rotate(0deg); -webkit-transform-origin:245px center;}
+    100% {-webkit-transform: rotate(360deg); -webkit-transform-origin:245px center;}
+}
+
+@keyframes kruzna {
+    0%   {transform: rotate(0deg); transform-origin:245px center;margin-left: -233px;}
+    100% {transform: rotate(360deg); transform-origin:245px center;margin-left: -233px;}
+}  
+#circle {
+    margin-left: -284px;
+    margin-top: -50px;
+    -webkit-animation: one 2s ease-in-out;
+    animation: one 2s ease-in-out;
+	-webkit-animation-delay: 2s;
+	-moz-animation-delay: 2s;
+	-ms-animation-delay: 2s;
+	animation-delay: 2s;}
+#circle2 {
+    margin-left: 180px;
+    margin-top: -50px;
+    -webkit-animation: one 2s ease-in-out;
+    animation: one 2s ease-in-out;
+	-webkit-animation-delay: 8s;
+	-moz-animation-delay: 8s;
+	-ms-animation-delay: 8s;
+	animation-delay: 8s;}
+#circle3 {
+    margin-left: -170px;
+    margin-top: -250px;
+    -webkit-animation: one 2s ease-in-out;
+    animation: one 2s ease-in-out;
+	-webkit-animation-delay: 4s;
+	-moz-animation-delay: 4s;
+	-ms-animation-delay: 4s;
+	animation-delay: 4s;}
+#circle4 {
+    margin-left: 75px;
+    margin-top: -245px;
+    -webkit-animation: one 2s ease-in-out;
+    animation: one 2s ease-in-out;
+	-webkit-animation-delay: 6s;
+	-moz-animation-delay: 6s;
+	-ms-animation-delay: 6s;
+	animation-delay: 6s;
+	font: 13px/20px arial !important;
+	padding: 45px 0;}
+#circle5 {
+    margin-left: -180px;
+    margin-top: 140px;
+    -webkit-animation: one 2s ease-in-out;
+    animation: one 2s ease-in-out;
+	-webkit-animation-delay: 12s;
+	-moz-animation-delay: 12s;
+	-ms-animation-delay: 12s;
+	animation-delay: 12s;}
+#circle6 {
+    margin-left: 60px;
+    margin-top: 150px;
+    -webkit-animation: one 2s ease-in-out;
+    animation: one 2s ease-in-out;
+	-webkit-animation-delay: 10s;
+	-moz-animation-delay: 10s;
+	-ms-animation-delay: 10s;
+	animation-delay: 10s;}
+@-webkit-keyframes one {
+    0%   {-webkit-transform: scale(0.5)}
+    20% {-webkit-transform: scale(1)}
+    80% {-webkit-transform: scale(1)}
+    100% {-webkit-transform: scale(0.5)}
+}
+
+@keyframes one {
+    0%   {transform: scale(0.5)}
+    20% {transform: scale(1)}
+    80% {transform: scale(1)}
+    100% {transform: scale(0.5)}
+}
+#mask {
+	width: 650px;	
+	height: 650px;	
+	position: relative;
+	top: 50%;
+	left: 50%;
+	margin: 0 0 0 -325px;
+	overflow:hidden
+}
+#main-screen {
+	width: 500px;	
+	height: 500px;	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -250px 0 0 -250px;
+}
+@-webkit-keyframes main {
+    0%   {left: 150%;}
+    100% {left: 50%;}
+}
+
+@keyframes main {
+    0%   {left: 150%;}
+    100% {left: 50%;}
+}
+
+#clock1 {
+    color: #fff;
+    font: 13px/130px arial;
+	text-transform:uppercase;
+    text-align: center;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    width: 350px;
+    left: 50%;
+	margin: -165px 0 0 -165px;
+	transition: all 0.25s ease-in-out;
+}
+@-webkit-keyframes clock {
+    0%   {left: 50%;}
+    100% {left: -50%;}
+}
+
+@keyframes clock {
+    0%   {left: 50%;}
+    100% {left: -50%;}
+}
+#clock-shape {
+    color: #fff;
+    font: 13px/130px arial;
+	text-transform:uppercase;
+    text-align: center;
+    border: 10px solid #eaeaea;
+    border-radius: 50%;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    width: 350px;
+    left: 50%;
+	margin: -175px 0 0 -175px;
+	transition: all 0.25s ease-in-out;
+}
+#clock-stick {
+    color: #fff;
+    font: 13px/130px arial;
+	text-transform:uppercase;
+    text-align: center;
+    border: 5px solid #eaeaea;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    left: 165px;
+	margin: -150px 0 0 0;
+	transition: all 0.25s ease-in-out;
+    -webkit-animation: stick 10s infinite linear;
+    animation: stick 10s infinite linear;
+}
+#clock-stick1 {
+    border: 10px solid #eaeaea;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    left: 165px;
+	margin: -100px 0 0 0;
+	transition: all 0.25s ease-in-out;
+    -webkit-animation: stick1 18s infinite linear;
+    animation: stick1 18s infinite linear;
+}
+@-webkit-keyframes stick {
+    0%   {-webkit-transform: rotate(0deg);-webkit-transform-origin:center 150px;}
+    100% {-webkit-transform: rotate(360deg);-webkit-transform-origin:center 150px;}
+}
+
+@keyframes stick {
+    0%   {transform: rotate(0deg);transform-origin:center 150px;}
+    100% {transform: rotate(360deg);transform-origin:center 150px;}
+}
+@-webkit-keyframes stick1 {
+    0%   {-webkit-transform: rotate(0deg);-webkit-transform-origin:center 100px;}
+    100% {-webkit-transform: rotate(360deg);-webkit-transform-origin:center 100px;}
+}
+
+@keyframes stick1 {
+    0%   {transform: rotate(0deg);transform-origin:center 100px;}
+    100% {transform: rotate(360deg);transform-origin:center 100px;}
+}
+#clock-text  {
+	font: 16px/20px	arial;
+	
+}

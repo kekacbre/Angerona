@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="author" content="">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>Angerona</title>
+<meta name="Googlebot" content="index, follow">
+<meta name="revisit-after" content="3">
+<meta name="Robots" content="INDEX, FOLLOW">
+    
+<meta property="og:site_name" content="">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:description" content="">
+<meta property="og:image" content="images/logo.png">
+<meta property="og:title" content="">
+<meta property="og:url" content="">
+
+<link rel="alternate" hreflang="en-GB" href="" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/framework.css" rel="stylesheet" type="text/css" />
+<link href="css/animate.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="images/fav.png" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/custom.js"></script>
+<script src="js/modernizr.js"></script>
+
+<link href="css/owl.carousel.css" rel="stylesheet">
+<link href="css/owl.theme.css" rel="stylesheet">
+
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.12/src/infobox.js"></script>
+<script>
+
+var ib = new InfoBox();
+
+function initialize() {
+
+var mapOptions = {
+  zoom: 16,
+  center: new google.maps.LatLng(44.621297, 21.187177),
+  mapTypeId: google.maps.MapTypeId.ROADMAP,
+//  styles: styles,
+  scrollwheel: false
+};
+var map = new google.maps.Map(document.getElementById('inner-image'),mapOptions);
+
+    google.maps.event.addListener(map, "click", function() { ib.close() });
+
+setMarkers(map, sites);
+            infowindow = new google.maps.InfoWindow({
+    content: "loading..."
+
+});
+}
+
+var sites = [
+	['Stari Korzo', 44.621297, 21.187177, 1, '<p>Led Bilbord na uglu Ulica kralja Petra I i Nušućeve <br /> <img src="images/map-image.jpg" /><br/> <a href="led-full.html" class="view">Detaljnije</a></p>', 'images/marker1.png', 'Pozarevac']
+];
+
+/* var sites = [
+    // List all locations for each pin
+['The Frontroom', 52.202977,0.138938, 1, '<p>The Frontroom. <br/>23-25 Gwydir Street, Cambridge, CB1 2LG <br/>01223 305 600</p>']
+];
+*/
+
+function createMarker(site, map){
+    var siteLatLng = new google.maps.LatLng(site[1], site[2]);
+    var marker = new google.maps.Marker({
+        position: siteLatLng,
+        map: map,
+        title: site[0],
+        zIndex: site[3],
+        html: site[4],
+        icon: site[5],
+        category: site[6]
+    });
+
+    // Begin example code to get custom infobox
+    var boxText = document.createElement("div");
+    boxText.id = 'infooo';
+    boxText.innerHTML = marker.html;
+
+    var myOptions = {
+	 content: boxText,
+	 disableAutoPan: false,
+	 maxWidth: 0,
+	 pixelOffset: new google.maps.Size(-147, -310),
+	 zIndex: null,
+	 boxStyle: { 
+		background: "url('images/map-arrow.png') no-repeat center bottom"
+	 },
+	 closeBoxMargin: "-6px -8px 2px 2px",
+	 closeBoxURL: "images/map-close.png",
+	 infoBoxClearance: new google.maps.Size(1, 1),
+	 isHidden: false,
+	 pane: "floatPane",
+	 enableEventPropagation: false
+    };
+    // end example code for custom infobox
+
+    google.maps.event.addListener(marker, "click", function (e) {
+     ib.close();
+     ib.setOptions(myOptions);
+     ib.open(map, this);
+    });
+    return marker;
+}
+
+
+function setMarkers(map, markers) {
+
+ for (var i = 0; i < markers.length; i++) {
+   createMarker(markers[i], map);
+ }
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+</head>
+<body>
+
+<div id="header-container">
+<div id="header">
+	<div id="logo" data-0="height: 123px; width: 163px;padding: 10px;" data-200="height: 53px; padding: 5px; width: 73px;">
+    	<a href="index.html"><img src="images/logo.png" alt="angerona - logo" class="transition" style="width: 100%; max-width: 100%"></a>
+    </div>
+    <div id="menu" data-0="width: 817px;" data-200="width: 907px;">
+		<div id="menu-holder">
+            <a href="index.html" title="Naslovna">Naslovna</a>
+            <a href="index.html" title="O nama">O nama</a>
+            <a href="index.html" title="Led bilbordi">Led bilbordi</a>
+            <a href="index.html" title="Standardni bilbordi">Standardni bilbordi</a>
+            <a href="index.html" title="Reference">Reference</a>
+            <a href="kreativni_kutak.html" title="Kreativni kutak">Kreativni kutak</a>
+            <a href="index.html" title="Kontakt">Kontakt</a>
+            <a href="index.html" title="Cenovnik">Cenovnik</a>
+	    </div>
+    </div>
+</div>
+</div>
+<div id="inner-image"></div>
+<div id="body-container">
+    <div id="body" class="clearfix">
+        <span class="senka-levo"></span>
+        <span class="senka-desno"></span>
+		<div id="news-items">
+		  	<div id="news-title">Napravite sami svoj bilbord uz našu pomoć </div>
+			<div id="news-image"><img src="images/news-full-image.jpg" width="702" height="305"></div>
+	  	  	<div id="news-social"><img src="images/social-icons.png" width="316" height="29"></div>
+          <div id="news-text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at enim ligula. Fusce posuere consectetur quam a elementum. Mauris condimentum nulla vitae gravida viverra. Phasellus id volutpat quam, a consectetur metus. Fusce efficitur at tortor ac elementum. Donec malesuada tortor massa, sed efficitur erat sagittis gravida. Nulla dapibus mi massa, at fermentum orci commodo quis. Sed lobortis lorem ac ante ultrices tempor. Donec sit amet risus augue. Nullam eget turpis ac enim volutpat bibendum et sit amet diam. In hendrerit est id tortor cursus, fringilla vehicula eros elementum.
+<br><br>
+Morbi purus tellus, molestie eu commodo ullamcorper, pulvinar at ipsum. Sed tempus, urna ut bibendum tincidunt, libero velit laoreet metus, et bibendum augue sapien at est. In id metus rutrum tellus viverra volutpat. Nullam eget sagittis lectus. Nam et dolor ac est aliquam pretium. Curabitur sit amet arcu convallis, eleifend ligula in, tincidunt augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<br><br>
+Etiam pulvinar, leo non dictum efficitur, enim mi molestie sem, eu pulvinar ligula dui quis arcu. Nunc et hendrerit eros. In malesuada efficitur sem eu luctus. Curabitur a nisi dui. Donec pretium tortor fermentum, egestas tellus in, bibendum nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque egestas lacus in lorem suscipit, at vestibulum turpis auctor. Fusce vel accumsan odio. Maecenas vulputate libero a arcu blandit, et lobortis sem consectetur. In vel nisi vitae tortor iaculis porta. Phasellus luctus vulputate mi nec dapibus. Nullam blandit elit eget egestas aliquam. Proin non sapien feugiat metus pellentesque porta sed eu nisi.
+<br><br>
+In bibendum sem id felis luctus, sit amet ornare justo varius. Aliquam erat volutpat. Suspendisse ultrices gravida velit sit amet finibus. Nunc cursus tellus eget ornare suscipit. Suspendisse congue lobortis lectus at congue. Maecenas ut lacus gravida, rhoncus sapien varius, pellentesque augue. Duis aliquet in risus quis varius.      
+            </div>
+        </div>
+        <div id="side-bar">
+       	  	<div class="news-other-title">Social</div>
+            <div id="news-other-content">
+                <div id="news-other-main">
+                	<img src="images/slika1.png" />
+					Novi bilbord u Ulici Vojvode Stepe
+                </div>
+                <div id="news-other">Novi bilbord u Ulici Vojvode Stepe</div>
+                <div id="news-other">Novi bilbord u Ulici Vojvode Stepe</div>
+ 	       	</div>
+            <div id="banner2"><img src="images/banner1.png"></div>
+        </div>
+        <div id="references">
+            <div id="owl-ref" class="owl-carousel">        
+                <div class="item"><img src="images/reference/intel.png" alt="angerona slide"></div>
+                <div class="item"><img src="images/reference/infinit.png" alt="angerona slide"></div>
+                <div class="item"><img src="images/reference/stinger.png" alt="angerona slide"></div>
+                <div class="item"><img src="images/reference/fox.png" alt="angerona slide"></div>
+                <div class="item"><img src="images/reference/lewis.png" alt="angerona slide"></div>
+                <div class="item"><img src="images/reference/hummer.png" alt="angerona slide"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+	<div id="footer-content">
+	  <div class="sitemap-full">
+        	<ul class="sitemap">
+            	<li><a href="#">Naslovna</a></li>
+            	<li><a href="#">Reference</a></li>
+            	<li><a href="#">Kreativni kutak</a></li>
+            	<li><a href="#">Kontakt</a></li>
+            	<li><a href="#">Cenovnik</a></li>
+            </ul>
+            <ul class="niz">
+            	<li class="sitemap-title">O nama</li>
+            	<li><a href="#">Istorijat</a></li>
+            	<li><a href="#">Istorijat</a></li>
+            	<li><a href="#">Istorijat</a></li>
+            </ul>
+            <ul class="niz">
+            	<li class="sitemap-title">Led bilbordi</li>
+            	<li><a href="#">Led 100x50</a></li>
+            	<li><a href="#">Led 100x50</a></li>
+            	<li><a href="#">Led 100x50</a></li>
+            </ul>
+          <ul class="niz">
+           	  <li class="sitemap-title">Standardni bilbordi</li>
+           	  <li><a href="#">Standardni 100x50</a></li>
+           	  <li><a href="#">Standardni 100x50</a></li>
+           	  <li><a href="#">Standardni 100x50</a></li>
+          </ul>
+        </div>
+	  <div class="trecina fleft">
+      	<div id="footer-contact-item">
+       	  <div id="footer-contact-item-content">
+            	<div id="footer-item-icon"><img src="images/lokacija-icon.png" width="36" height="36"></div>
+            	<div id="footer-item-desc">ANGERONA DOO<br> Stari Korzo 36, III sprat, Požarevac</div>
+            </div>
+        </div>
+      	<div id="footer-contact-item">
+       	  <div id="footer-contact-item-content">
+            	<div id="footer-item-icon"><img src="images/phone-icon.png" width="36" height="36"></div>
+            	<div id="footer-item-desc">Mobilni telefon: +38162  79  00 10<br>Fax: 022 65656 656 65 65 6 56</div>
+            </div>
+        </div>
+      	<div id="footer-contact-item">
+       	  <div id="footer-contact-item-content">
+            	<div id="footer-item-icon"><img src="images/mail-icon.png" width="36" height="36"></div>
+            	<div id="footer-item-desc"><a href="mailto:angeronamedia@gmail.com">angeronamedia@gmail.com</a><br><a href="mailto:office@angerona.rs">office@angerona.rs</a></div>
+            </div>
+        </div>
+      </div>
+	  <div class="fright padA10 footer-social">
+        <a href="#"><img src="images/fb.png" /></a>
+        <a href="#"><img src="images/tw.png" /></a>
+        <a href="#"><img src="images/g.png" /></a>
+        <a href="#"><img src="images/in.png" /></a>
+      </div>
+        <div id="footer-info">
+          Copyright © 2014 Angerona d.oo. - Sva prava zadržana.
+            <a href="http://www.scalateam.com" target="_blank"><img src="images/designed.png" style="position: absolute; right: 0; bottom:0; width: auto; height: 32px;"/></a>
+        </div>
+    </div>
+    <div id="footer-bg"></div>
+</div>
+
+<script type="text/javascript" src="js/skrollr.min.js"></script>
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/skrollr.ie.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+var s = skrollr.init({
+        edgeStrategy: 'set',
+        easing: {
+                WTF: Math.random,
+                inverted: function(p) {
+                        return 1-p;
+                }
+        }
+});
+</script>
+
+<script src="js/owl.carousel.js"></script>
+<style>
+#owl-demo .item img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+</style>
+
+
+<script>
+$(document).ready(function() {
+  $("#owl-demo").owlCarousel({
+	  navigation : true,
+	  pagination: false,
+	  slideSpeed : 300,
+	  paginationSpeed : 400,
+	  singleItem : true
+  });
+  $("#owl-ref").owlCarousel({
+		navigation : false,
+		pagination: false,
+		autoPlay: true
+  });
+});
+</script>
+
+</body>
+</html>	

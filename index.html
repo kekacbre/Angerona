@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="author" content="">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>Angerona</title>
+<meta name="Googlebot" content="index, follow">
+<meta name="revisit-after" content="3">
+<meta name="Robots" content="INDEX, FOLLOW">
+    
+<meta property="og:site_name" content="">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:description" content="">
+<meta property="og:image" content="images/logo.png">
+<meta property="og:title" content="">
+<meta property="og:url" content="">
+
+<link rel="alternate" hreflang="en-GB" href="" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/framework.css" rel="stylesheet" type="text/css" />
+<link href="css/animate.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="images/fav.png" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+<script src="js/jquery-1.7.2.min.js"></script>
+
+<link href="css/owl.carousel.css" rel="stylesheet">
+<link href="css/owl.theme.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/jquery.billboard.css">
+
+<script>
+window.onload = function() {
+	imgs = document.getElementById('slideshow').children;
+	interval = 3000;
+	currentPic = 0;
+	imgs[currentPic].style.webkitAnimation = 'fadey '+interval+'ms';
+	imgs[currentPic].style.animation = 'fadey '+interval+'ms';
+ 
+	var infiniteLoop = setInterval(function(){
+		imgs[currentPic].removeAttribute('style');
+		if ( currentPic == imgs.length - 1) { currentPic = 0; } else { currentPic++; }
+		imgs[currentPic].style.webkitAnimation = 'fadey '+interval+'ms';
+		imgs[currentPic].style.animation = 'fadey '+interval+'ms';
+	}, interval);
+}
+</script>
+</head>
+<body>
+
+<div id="header-container">
+<div id="header">
+	<div id="logo" data-0="height: 123px; width: 163px;padding: 10px;" data-200="height: 53px; padding: 5px; width: 73px;">
+    	<a href="index.html"><img src="images/logo.png" alt="angerona - logo" class="transition" style="width: 100%; max-width: 100%"></a>
+    </div>
+    <div id="menu" data-0="width: 817px;" data-200="width: 907px;">
+		<div id="menu-holder">
+            <a href="index.html" title="Naslovna">Naslovna</a>
+            <a href="index.html" title="O nama">O nama</a>
+            <a href="index.html" title="Led bilbordi">Led bilbordi</a>
+            <a href="index.html" title="Standardni bilbordi">Standardni bilbordi</a>
+            <a href="index.html" title="Reference">Reference</a>
+            <a href="kreativni_kutak.html" title="Kreativni kutak">Kreativni kutak</a>
+            <a href="index.html" title="Kontakt">Kontakt</a>
+            <a href="index.html" title="Cenovnik">Cenovnik</a>
+	    </div>
+    </div>
+</div>
+</div>
+<div id="slider">
+    <div id="owl-demo" class="owl-carousel">        
+        <div class="item">
+        	<img src="images/slide1.jpg" alt="angerona slide">
+            <div id="slideshow-container">
+                <figure id="slideshow">
+                    <img src="images/photo1.jpg" alt="img">
+                    <img src="images/photo2.jpg" alt="img">
+                    <img src="images/photo3.jpg" alt="img">
+                </figure>
+            </div>
+      	</div>
+        <div class="item"><img src="images/slide1.jpg" alt="angerona slide"></div>
+        <div class="item"><img src="images/slide1.jpg" alt="angerona slide"></div>
+    </div>
+</div>
+<div id="body-container">
+    <div id="body" class="clearfix">
+    <span class="senka-levo"></span>
+    <span class="senka-desno"></span>
+      <div id="panels">
+          <a href="#" id="panel-item" class="transition">
+                <div class="icon led transition" style="background:url(images/index-led.png) no-repeat center center #fff;"></div>
+                <div class="title transition">LED Bilbordi</div>
+                <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Curabitur eleifend tortor nisi, non fringilla magna maximus id. Suspendisse potenti. Aenean mollis porttitor amet urna aliquet, ac commodo odio auctor. </div>
+			  <span class="zvezdica"><img src="images/zvezdica.png" width="19" height="18" alt="angerona - zvezdica"></span>
+          </a>
+        <a href="#" id="panel-item" class="transition">
+                <div class="icon monitor transition" style="background:url(images/index-monitor.png) no-repeat center center #fff;"></div>
+        <div class="title transition">Standardni Bilbordi</div>
+        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Curabitur eleifend tortor nisi, non fringilla magna maximus id. Suspendisse potenti. Aenean mollis porttitor amet urna aliquet, ac commodo odio auctor. </div>
+		    <span class="zvezdica"><img src="images/zvezdica.png" width="19" height="18" alt="angerona - zvezdica"></span>
+        </a>
+          <a href="#" id="panel-item" class="transition">
+                <div class="icon sijalica transition" style="background:url(images/index-sijalica.png) no-repeat center center #fff;"></div>
+                <div class="title transition">Kreativni kutak</div>
+                <div class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Curabitur eleifend tortor nisi, non fringilla magna maximus id. Suspendisse potenti. Aenean mollis porttitor amet urna aliquet, ac commodo odio auctor. </div>
+			  <span class="zvezdica"><img src="images/zvezdica.png" width="19" height="18" alt="angerona - zvezdica"></span>
+          </a>
+        </div>
+        <div id="references">
+            <div id="owl-ref" class="owl-carousel">        
+                <div class="item"><img src="images/reference/intel.png" alt="angerona slide"></div>
+                <div class="item"><img src="images/reference/infinit.png" alt="angerona slide"></div>
+                <div class="item"><img src="images/reference/stinger.png" alt="angerona slide"></div>
+                <div class="item"><img src="images/reference/fox.png" alt="angerona slide"></div>
+                <div class="item"><img src="images/reference/lewis.png" alt="angerona slide"></div>
+                <div class="item"><img src="images/reference/hummer.png" alt="angerona slide"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+	<div id="footer-content">
+	  <div class="sitemap-full">
+        	<ul class="sitemap">
+            	<li><a href="#">Naslovna</a></li>
+            	<li><a href="#">Reference</a></li>
+            	<li><a href="#">Kreativni kutak</a></li>
+            	<li><a href="#">Kontakt</a></li>
+            	<li><a href="#">Cenovnik</a></li>
+            </ul>
+            <ul class="niz">
+            	<li class="sitemap-title">O nama</li>
+            	<li><a href="#">Istorijat</a></li>
+            	<li><a href="#">Istorijat</a></li>
+            	<li><a href="#">Istorijat</a></li>
+            </ul>
+            <ul class="niz">
+            	<li class="sitemap-title">Led bilbordi</li>
+            	<li><a href="#">Led 100x50</a></li>
+            	<li><a href="#">Led 100x50</a></li>
+            	<li><a href="#">Led 100x50</a></li>
+            </ul>
+          <ul class="niz">
+           	  <li class="sitemap-title">Standardni bilbordi</li>
+           	  <li><a href="#">Standardni 100x50</a></li>
+           	  <li><a href="#">Standardni 100x50</a></li>
+           	  <li><a href="#">Standardni 100x50</a></li>
+          </ul>
+        </div>
+	  <div class="trecina fleft">
+      	<div id="footer-contact-item">
+       	  <div id="footer-contact-item-content">
+            	<div id="footer-item-icon"><img src="images/lokacija-icon.png" width="36" height="36"></div>
+            	<div id="footer-item-desc">ANGERONA DOO<br> Stari Korzo 36, III sprat, Požarevac</div>
+            </div>
+        </div>
+      	<div id="footer-contact-item">
+       	  <div id="footer-contact-item-content">
+            	<div id="footer-item-icon"><img src="images/phone-icon.png" width="36" height="36"></div>
+            	<div id="footer-item-desc">Mobilni telefon: +38162  79  00 10<br>Fax: 022 65656 656 65 65 6 56</div>
+            </div>
+        </div>
+      	<div id="footer-contact-item">
+       	  <div id="footer-contact-item-content">
+            	<div id="footer-item-icon"><img src="images/mail-icon.png" width="36" height="36"></div>
+            	<div id="footer-item-desc"><a href="mailto:angeronamedia@gmail.com">angeronamedia@gmail.com</a><br><a href="mailto:office@angerona.rs">office@angerona.rs</a></div>
+            </div>
+        </div>
+      </div>
+	  <div class="fright padA10 footer-social">
+        <a href="#"><img src="images/fb.png" /></a>
+        <a href="#"><img src="images/tw.png" /></a>
+        <a href="#"><img src="images/g.png" /></a>
+        <a href="#"><img src="images/in.png" /></a>
+      </div>
+        <div id="footer-info">
+          Copyright © 2014 Angerona d.oo. - Sva prava zadržana.
+            <a href="http://www.scalateam.com" target="_blank"><img src="images/designed.png" style="position: absolute; right: 0; bottom:0; width: auto; height: 32px;"/></a>
+        </div>
+    </div>
+    <div id="footer-bg"></div>
+</div>
+
+
+<script type="text/javascript" src="js/skrollr.min.js"></script>
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/skrollr.ie.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+var s = skrollr.init({
+        edgeStrategy: 'set',
+        easing: {
+                WTF: Math.random,
+                inverted: function(p) {
+                        return 1-p;
+                }
+        }
+});
+</script>
+
+<script src="js/owl.carousel.js"></script>
+<style>
+#owl-demo .item img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+</style>
+
+
+<script>
+$(document).ready(function() {
+  $("#owl-demo").owlCarousel({
+	  navigation : true,
+	  pagination: false,
+	  slideSpeed : 300,
+	  paginationSpeed : 400,
+	  singleItem : true
+  });
+  $("#owl-ref").owlCarousel({
+		navigation : false,
+		pagination: false,
+		autoPlay: true
+  });
+});
+</script>
+
+</body>
+</html>	
