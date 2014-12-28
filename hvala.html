@@ -33,90 +33,6 @@
 <link href="css/owl.carousel.css" rel="stylesheet">
 <link href="css/owl.theme.css" rel="stylesheet">
 
-<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-<script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.12/src/infobox.js"></script>
-<script>
-
-var ib = new InfoBox();
-
-function initialize() {
-
-var mapOptions = {
-  zoom: 16,
-  center: new google.maps.LatLng(44.621297, 21.187177),
-  mapTypeId: google.maps.MapTypeId.ROADMAP,
-//  styles: styles,
-  scrollwheel: false
-};
-var map = new google.maps.Map(document.getElementById('inner-image'),mapOptions);
-
-    google.maps.event.addListener(map, "click", function() { ib.close() });
-
-setMarkers(map, sites);
-            infowindow = new google.maps.InfoWindow({
-    content: "loading..."
-
-});
-}
-
-var sites = [
-	['Stari Korzo', 44.621297, 21.187177, 1, '<p>Led Bilbord na uglu Ulica kralja Petra I i Nušućeve <br /> <img src="images/map-image.jpg" /><br/> <a href="led-full.html" class="view">Detaljnije</a></p>', 'images/marker2.png', 'Pozarevac']
-];
-
-/* var sites = [
-    // List all locations for each pin
-['The Frontroom', 52.202977,0.138938, 1, '<p>The Frontroom. <br/>23-25 Gwydir Street, Cambridge, CB1 2LG <br/>01223 305 600</p>']
-];
-*/
-
-function createMarker(site, map){
-    var siteLatLng = new google.maps.LatLng(site[1], site[2]);
-    var marker = new google.maps.Marker({
-        position: siteLatLng,
-        map: map,
-        title: site[0],
-        zIndex: site[3],
-        html: site[4],
-        icon: site[5],
-        category: site[6]
-    });
-
-    // Begin example code to get custom infobox
-    var boxText = document.createElement("div");
-    boxText.id = 'infooo';
-    boxText.innerHTML = marker.html;
-
-    var myOptions = {
-	 content: boxText,
-	 disableAutoPan: false,
-	 maxWidth: 0,
-	 pixelOffset: new google.maps.Size(-147, -310),
-	 zIndex: null,
-	 boxStyle: { 
-		background: "url('images/map-arrow.png') no-repeat center bottom"
-	 },
-	 closeBoxMargin: "-6px -8px 2px 2px",
-	 closeBoxURL: "images/map-close.png",
-	 infoBoxClearance: new google.maps.Size(1, 1),
-	 isHidden: true,
-	 pane: "floatPane",
-	 enableEventPropagation: false
-    };
-    // end example code for custom infobox
-
-}
-
-
-function setMarkers(map, markers) {
-
- for (var i = 0; i < markers.length; i++) {
-   createMarker(markers[i], map);
- }
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
-
 </head>
 <body>
 
@@ -139,61 +55,20 @@ google.maps.event.addDomListener(window, 'load', initialize);
     </div>
 </div>
 </div>
-<div id="inner-image"></div>
+<div id="inner-image" style="background: none; height: 150px;"></div>
 <div id="body-container">
-	<a href="#" id="strelica-levo">
-        <span class="slika-next fright"><img src="images/slika-mala.png" width="126" height="125"></span>
-    </a>
-	<a href="#" id="strelica-desno">
-        <span class="slika-next fleft"><img src="images/slika-mala.png" width="126" height="125"></span>
-    </a>
-    
     <div id="body" class="clearfix">
         <span class="senka-levo"></span>
         <span class="senka-desno"></span>
-		<div id="news-items">
-		  	<div id="news-title">Trg Republike</div>
-          	<div id="news-text">
-Postavljen između dva stajališta gradskog prevoza, ovaj displej dimenzija 4 x 3 metra komunicira sa celokupnim saobraćajem koji se odvija oko, a što je još bitnije, sa svim pešacima koji se nalaze na samom platou Trga Republike 
-<br><bR>
-Ugao gledanja od 150 stepeni, celodnevni osvetljaj kao i pažljivo birana pozicija, obezbeđuju vidljivost i pažnju svih sugrađana, ali i gostiju u našem gradu, koji su Trg Republike prepoznali kao glavnu i nezaobilaznu tačku okupljanja u centru            
-			</div>
-			<div id="news-image">
-            <div id="owl-gallery" class="owl-carousel">        
-                <div class="item"><img src="images/gallery1.jpg" alt="angerona slide"></div>
-                <div class="item"><img src="images/gallery1.jpg" alt="angerona slide"></div>
-                <div class="item"><img src="images/gallery1.jpg" alt="angerona slide"></div>
-            </div>
-            </div>
-        </div>
-        <div id="side-bar">
-			<div class="social-title">Lokacije</div>
-            <div id="side-bar-content" style="background: #252525; color: #fff; font-weight:bold">
-				<p class="loc-title">POŽAREVAC</p>
-				<a href="#" class="lokacije-link">Trg Republike</a>
-				<a href="#" class="lokacije-link">Vukov spomenik</a>
-				<a href="#" class="lokacije-link">Fontana</a>
-				<a href="#" class="lokacije-link">Glavna raskrsnica</a>
-				<a href="#" class="lokacije-link">Staro sajmište</a>
-				<a href="#" class="lokacije-link">Centar grada</a>
-				<a href="#" class="lokacije-link">Raskrsnica kod Skupštine grada</a>
-				<a href="#" class="lokacije-link">Kod Cvićeve škole</a>
-				<a href="#" class="lokacije-link">Glavna Biblioteka</a>
-				<p class="loc-title">VELIKO GRADIŠTE</p>
-				<a href="#" class="lokacije-link">Trg Republike</a>
-				<a href="#" class="lokacije-link">Vukov spomenik</a>
-				<a href="#" class="lokacije-link">Fontana</a>
-				<a href="#" class="lokacije-link">Glavna raskrsnica</a>
-				<a href="#" class="lokacije-link">Staro sajmište</a>
-				<a href="#" class="lokacije-link">Centar grada</a>
-				<p class="loc-title">MALO CRNIĆE</p>
-				<a href="#" class="lokacije-link">Trg Republike</a>
-				<a href="#" class="lokacije-link">Vukov spomenik</a>
-				<a href="#" class="lokacije-link">Fontana</a>
-				<a href="#" class="lokacije-link">Glavna raskrsnica</a>
-				<a href="#" class="lokacije-link">Staro sajmište</a>
-				<a href="#" class="lokacije-link">Centar grada</a>
- 	       	</div>
+		<div id="news-items" class="centertext" style="width: 100% !important; padding: 100px 0">
+	    	<img src="images/check.png" width="84" height="73">
+            <h1 class="orange mrgT10 mrgB30 nohover">Hvala Vam što ste nas kontaktirali</h1>
+            <p>Poštovani, bićete kontaktirani od strane nekog od naših zaposlenih najkasnije<br>
+               u roku od 24 sata<Br><Br>
+			   Hvala što se zainteresovani za saradnju sa nama
+            </p>
+            <bR><br>
+            <a href="index.html" class="hvala-button">Nazad</a>
         </div>
         <div id="references">
             <div id="owl-ref" class="owl-carousel">        
@@ -300,9 +175,9 @@ var s = skrollr.init({
 
 <script>
 $(document).ready(function() {
-  $("#owl-gallery").owlCarousel({
-	  navigation : false,
-	  pagination: true,
+  $("#owl-demo").owlCarousel({
+	  navigation : true,
+	  pagination: false,
 	  slideSpeed : 300,
 	  paginationSpeed : 400,
 	  singleItem : true

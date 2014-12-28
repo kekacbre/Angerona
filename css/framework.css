@@ -63,15 +63,13 @@
 .nobgimg {
 	background-image: none !important;
 }
-.orange {color: #f16621 !important}
+.orange {color: #F68B1F !important}
 .orange2 {
 	color: #424244 !important
 }
-.orange2:hover {color: #e15a17 !important}
 .blue {color: #1880ad !important}
 .blue-bg {background-color: #1880ad !important}
 
-.orange:hover {color: #e15a17 !important}
 .orange-bg {background-color:: #f16621 !important}
 .gray {color: #424244 !important;}
 .padA0 {padding: 0px !important}

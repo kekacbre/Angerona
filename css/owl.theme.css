@@ -3,6 +3,14 @@
 *	v1.3.3
 */
 
+#owl-gallery .owl-buttons {
+    bottom: 0;
+    float: left;
+    height: 100px;
+    position: absolute;
+    width: 100%;
+}
+
 .owl-theme .owl-controls{
 	margin-top: 10px;
 	text-align: center;

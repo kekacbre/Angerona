@@ -47,6 +47,16 @@ ul {
     font-size: 16px;
     text-align: center;
 }
+.hvala-button {
+	width: 100px;
+	height: 35px;
+	border: 3px solid #F68B1F;
+	line-height:35px;
+	margin: 40px auto;
+	color: #333;
+	font-size: 16px;
+	padding: 5px 50px;	
+}
 #header-container {
 	height: 53px;
 	width: 100%;
@@ -119,11 +129,14 @@ ul {
 	max-width: 980px;
 	margin: 0 auto;
 	min-height: 550px;
+	position: relative;
 }
 #body {
 	height: auto;
 	width: 100%;
 	position: relative;
+	background: #fff;
+	z-index: 2;
 }
 #body .senka-levo {
 	background-image: url(../images/senka-levo.png);
@@ -149,6 +162,36 @@ ul {
 	top: 50px;
 	display: block;
 }
+#strelica-levo {
+    background: url("../images/strelica-levo.png") no-repeat scroll left center #e9841e;
+    border-radius: 63px;
+    display: block;
+    height: 125px;
+    left: -105px;
+    opacity: 0.4;
+    position: absolute;
+    top: 250px;
+    width: 290px;
+    z-index: 1;
+}
+#strelica-desno {
+    background: url("../images/strelica-desno.png") no-repeat scroll right center #e9841e;
+    border-radius: 63px;
+    display: block;
+    height: 125px;
+    right: -105px;
+    opacity: 0.4;
+    position: absolute;
+    top: 250px;
+    width: 290px;
+    z-index: 1;
+}
+#strelica-levo:hover, #strelica-desno:hover {
+	width: 290px;
+	z-index:100;
+	opacity: 1;	
+}
+
 #inner-image {
 	height: 300px;
 	width: 100%;
@@ -450,6 +493,29 @@ ul {
 #banner2 {
 	padding: 10px;	
 }
+.lokacije-link {
+	color: #a8a8a8;
+	font-size: 12px;
+	line-height: 18px;
+	text-decoration: none;
+	width: 100%;
+	float: left;
+}
+.lokacije-link:hover {
+	color: #fff;
+}
+
+.loc-title {
+	font-size: 14px;
+	color: #bf6810;
+	text-decoration: none;
+	float: left;
+	height: auto;
+	width: 100%;
+	margin-top: 10px;
+}
+
+
 #footer {
 	height: auto;
 	width: 100%;
