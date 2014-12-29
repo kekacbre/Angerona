@@ -123,6 +123,13 @@ ul {
 	text-shadow: 0 0 3px #fff,0 0 4px #fff,0 0 5px #fff,0 0 6px #fff;
 	background: url(../images/menu-item-bg.png) no-repeat center bottom;
 }
+#slider {
+	height: 520px;
+	width: 100%;
+	position: relative;
+	background: #fff;
+	z-index: 2;
+}
 #body-container {
 	height: auto;
 	width: 100%;
@@ -163,34 +170,54 @@ ul {
 	display: block;
 }
 #strelica-levo {
-    background: url("../images/strelica-levo.png") no-repeat scroll left center #e9841e;
-    border-radius: 63px;
-    display: block;
-    height: 125px;
-    left: -105px;
-    opacity: 0.4;
-    position: absolute;
-    top: 250px;
-    width: 290px;
-    z-index: 1;
+	background: url("../images/strelica-levo.png") no-repeat scroll left center #e9841e;
+	border-radius: 63px;
+	display: block;
+	height: 125px;
+	left: -105px;
+	opacity: 0.4;
+	position: absolute;
+	top: 250px;
+	width: 125px;
+	z-index: 1;
+	overflow: hidden;
 }
 #strelica-desno {
-    background: url("../images/strelica-desno.png") no-repeat scroll right center #e9841e;
-    border-radius: 63px;
-    display: block;
-    height: 125px;
-    right: -105px;
-    opacity: 0.4;
-    position: absolute;
-    top: 250px;
-    width: 290px;
-    z-index: 1;
+	background: url("../images/strelica-desno.png") no-repeat scroll right center #e9841e;
+	border-radius: 63px;
+	display: block;
+	height: 125px;
+	right: -105px;
+	opacity: 0.4;
+	position: absolute;
+	top: 250px;
+	width: 125px;
+	z-index: 1;
+	overflow: hidden;
 }
 #strelica-levo:hover, #strelica-desno:hover {
 	width: 290px;
 	z-index:100;
 	opacity: 1;	
 }
+.slika-next-container {
+	float: left;
+	height: 125px;
+	width: 290px;
+}
+
+.slika-next {
+	height: 115px;
+	width: 115px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 5px;
+}
+.slika-next img{
+	height: 120%;
+	width: auto;
+}
+
 
 #inner-image {
 	height: 300px;
@@ -490,6 +517,95 @@ ul {
 	float: left;
 	padding: 10px;
 }
+#reference-items {
+	float: left;
+	height: auto;
+	width: 100%;
+	padding: 20px;
+}
+#reference-items img{
+	float: left;
+	margin: 10px 5px;
+}
+#contact-right {
+	float: left;
+	height: auto;
+	width: 35%;
+	padding: 10px 15px 10px 0;
+}
+#contact-left {
+	float: left;
+	height: auto;
+	width: 65%;
+	padding: 10px 15px 10px 10px;
+}
+#contact-items {
+	float: left;
+	height: auto;
+	width: 100%;
+	margin-top: 40px;
+}
+#contact-items .contact-item {
+    float: left;
+    height: 240px;
+    line-height: 21px;
+    padding: 162px 30px 10px;
+    width: 33.3333%;
+}
+#contact-items .contact-item.lokacija {
+	background:url(../images/contact-lokacija.png) no-repeat center center;
+}
+#contact-items .contact-item.phone {
+	background:url(../images/contact-phone.png) no-repeat center center;
+}
+#contact-items .contact-item.mail{
+	background:url(../images/contact-email.png) no-repeat center center;
+}
+#onama-items {
+	float: left;
+	height: auto;
+	width: 100%;
+	margin-top: 40px;
+}
+#onama-items .onama-item {
+	float: left;
+	height: auto;
+	line-height: 17px;
+	padding: 20px 15px 10px;
+	width: 33.3333%;
+	font-size: 13px;
+}
+#onama-items .onama-item .onama-title {
+	float: left;
+	height: 40px;
+	width: 100%;
+	font-size: 14px;
+	line-height: 16px;
+	color: #f68b1f;
+	text-decoration: none;
+	padding: 5px 0 5px 50px;
+	margin-bottom: 10px;
+}
+#onama-items .onama-item .onama-title.efikasnost {
+	background:url(../images/cog-icon.png) no-repeat left center;
+}
+#onama-items .onama-item .onama-title.znanje {
+	background: url(../images/book-icon.png) no-repeat left center;
+}
+#onama-items .onama-item .onama-title.kvalitet {
+	background: url(../images/check-icon.png) no-repeat left center;
+}
+#onama-items .onama-item .onama-title span {
+	font-size: 18px;
+	color: #333;
+	font-weight: 700;
+	text-decoration: none;
+
+}
+
+
+
+
 #banner2 {
 	padding: 10px;	
 }
@@ -733,31 +849,19 @@ ul {
     width: 100%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .-------------{}
 
-@media all and screen(max-width: 768px){
+@media screen and (max-width: 768px){
 
 }
 
-@media all and screen(max-width: 1024px){
+@media screen and (max-width: 1024px){
+.senka-levo, .senka-desno {
+	display: none !important;
+}
 
 }
 
-@media all and screen(min-width: 1025px){
+@media screen and (min-width: 1025px){
 
 }

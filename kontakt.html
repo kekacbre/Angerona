@@ -33,6 +33,90 @@
 <link href="css/owl.carousel.css" rel="stylesheet">
 <link href="css/owl.theme.css" rel="stylesheet">
 
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.12/src/infobox.js"></script>
+<script>
+
+var ib = new InfoBox();
+
+function initialize() {
+
+var mapOptions = {
+  zoom: 16,
+  center: new google.maps.LatLng(44.621297, 21.187177),
+  mapTypeId: google.maps.MapTypeId.ROADMAP,
+//  styles: styles,
+  scrollwheel: false
+};
+var map = new google.maps.Map(document.getElementById('inner-image'),mapOptions);
+
+    google.maps.event.addListener(map, "click", function() { ib.close() });
+
+setMarkers(map, sites);
+            infowindow = new google.maps.InfoWindow({
+    content: "loading..."
+
+});
+}
+
+var sites = [
+	['Stari Korzo', 44.621297, 21.187177, 1, '<p>Led Bilbord na uglu Ulica kralja Petra I i Nušućeve <br /> <img src="images/map-image.jpg" /><br/> <a href="led-full.html" class="view">Detaljnije</a></p>', 'images/marker2.png', 'Pozarevac']
+];
+
+/* var sites = [
+    // List all locations for each pin
+['The Frontroom', 52.202977,0.138938, 1, '<p>The Frontroom. <br/>23-25 Gwydir Street, Cambridge, CB1 2LG <br/>01223 305 600</p>']
+];
+*/
+
+function createMarker(site, map){
+    var siteLatLng = new google.maps.LatLng(site[1], site[2]);
+    var marker = new google.maps.Marker({
+        position: siteLatLng,
+        map: map,
+        title: site[0],
+        zIndex: site[3],
+        html: site[4],
+        icon: site[5],
+        category: site[6]
+    });
+
+    // Begin example code to get custom infobox
+    var boxText = document.createElement("div");
+    boxText.id = 'infooo';
+    boxText.innerHTML = marker.html;
+
+    var myOptions = {
+	 content: boxText,
+	 disableAutoPan: false,
+	 maxWidth: 0,
+	 pixelOffset: new google.maps.Size(-147, -310),
+	 zIndex: null,
+	 boxStyle: { 
+		background: "url('images/map-arrow.png') no-repeat center bottom"
+	 },
+	 closeBoxMargin: "-6px -8px 2px 2px",
+	 closeBoxURL: "images/map-close.png",
+	 infoBoxClearance: new google.maps.Size(1, 1),
+	 isHidden: true,
+	 pane: "floatPane",
+	 enableEventPropagation: false
+    };
+    // end example code for custom infobox
+
+}
+
+
+function setMarkers(map, markers) {
+
+ for (var i = 0; i < markers.length; i++) {
+   createMarker(markers[i], map);
+ }
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
 </head>
 <body>
 
@@ -55,36 +139,39 @@
     </div>
 </div>
 </div>
-<div id="inner-image" style="background: url(images/kutak-header.jpg) no-repeat center center / cover"></div>
+<div id="inner-image" style="height: 400px;"></div>
 <div id="body-container">
     <div id="body" class="clearfix">
         <span class="senka-levo"></span>
         <span class="senka-desno"></span>
-		<div id="news-items">
-		  	<div id="news-title">Napravite sami svoj bilbord uz našu pomoć </div>
-			<div id="news-image"><img src="images/news-full-image.jpg" width="702" height="305"></div>
-	  	  	<div id="news-social"><img src="images/social-icons.png" width="316" height="29"></div>
-          <div id="news-text">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at enim ligula. Fusce posuere consectetur quam a elementum. Mauris condimentum nulla vitae gravida viverra. Phasellus id volutpat quam, a consectetur metus. Fusce efficitur at tortor ac elementum. Donec malesuada tortor massa, sed efficitur erat sagittis gravida. Nulla dapibus mi massa, at fermentum orci commodo quis. Sed lobortis lorem ac ante ultrices tempor. Donec sit amet risus augue. Nullam eget turpis ac enim volutpat bibendum et sit amet diam. In hendrerit est id tortor cursus, fringilla vehicula eros elementum.
-<br><br>
-Morbi purus tellus, molestie eu commodo ullamcorper, pulvinar at ipsum. Sed tempus, urna ut bibendum tincidunt, libero velit laoreet metus, et bibendum augue sapien at est. In id metus rutrum tellus viverra volutpat. Nullam eget sagittis lectus. Nam et dolor ac est aliquam pretium. Curabitur sit amet arcu convallis, eleifend ligula in, tincidunt augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-<br><br>
-Etiam pulvinar, leo non dictum efficitur, enim mi molestie sem, eu pulvinar ligula dui quis arcu. Nunc et hendrerit eros. In malesuada efficitur sem eu luctus. Curabitur a nisi dui. Donec pretium tortor fermentum, egestas tellus in, bibendum nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque egestas lacus in lorem suscipit, at vestibulum turpis auctor. Fusce vel accumsan odio. Maecenas vulputate libero a arcu blandit, et lobortis sem consectetur. In vel nisi vitae tortor iaculis porta. Phasellus luctus vulputate mi nec dapibus. Nullam blandit elit eget egestas aliquam. Proin non sapien feugiat metus pellentesque porta sed eu nisi.
-<br><br>
-In bibendum sem id felis luctus, sit amet ornare justo varius. Aliquam erat volutpat. Suspendisse ultrices gravida velit sit amet finibus. Nunc cursus tellus eget ornare suscipit. Suspendisse congue lobortis lectus at congue. Maecenas ut lacus gravida, rhoncus sapien varius, pellentesque augue. Duis aliquet in risus quis varius.      
+		<div id="contact-left">
+		  	<div id="news-title">Kontaktirajte nas</div>
+          	<div id="news-text">
+				Molimo Vas da upotrebite Kontakt formu sa desne strane ukoliko imate bilo kakva pitanja ili zahteve u pogledu naših usluga<br><br>
+                Dobićete odgovor u narednih 24 sata
+        	</div>
+            <div id="contact-items">
+            	<div class="contact-item lokacija">
+                    <strong>ANGERONA DOO</strong><br>
+                    Stari Korzo 36, III sprat<br>
+                    12000 Požarevac
+                </div>
+            	<div class="contact-item phone">
+                    <strong>Telefoni</strong><br>
+                    Mob: +38162 79 00 10<br>
+                    Fax: 022 656 56 56 
+                </div>
+           	  	<div class="contact-item mail">
+                    <strong>E-mail</strong><br>
+                	<a href="mailto:angeronamedia@gmail.com" class="gray-text">angeronamedia@gmail.com</a>
+                 	<a href="mailto:office@angerona.rs" class="gray-text">office@angerona.rs</a>
+                </div>
             </div>
         </div>
-        <div id="side-bar">
-       	  	<div class="news-other-title">Social</div>
+        <div id="contact-right">
             <div id="news-other-content">
-                <div id="news-other-main">
-                	<img src="images/slika1.png" />
-					Novi bilbord u Ulici Vojvode Stepe
-                </div>
-                <div id="news-other">Novi bilbord u Ulici Vojvode Stepe</div>
-                <div id="news-other">Novi bilbord u Ulici Vojvode Stepe</div>
+				<iframe frameborder="0" height="480" scrolling="no" src="contact_forma/contactform.php" style="margin-bottom: 20px" width="100%"></iframe></iframe>
  	       	</div>
-            <div id="banner2"><img src="images/banner1.png"></div>
         </div>
         <div id="references">
             <div id="owl-ref" class="owl-carousel">        
